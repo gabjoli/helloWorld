@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact HTML</title>
+
+{% extends "base.html" %}
+    {% block page_content %}
+      <div class="col-12">
+         <nav class="nav justify-content-center">
+             <p> Gabrielle Coleman's Module 08</p>
+         </nav>
+      </div>
+</head>
+<body>
+{%  if form_submitted %}
+    <div class = "col-12">
+        <h2> Thank you for completing my form!</h2>
+    </div>
+
+    <div class = "col-md-6">
+        <p> First Name</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> {{ request.form.get('first_name') }}</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> Last Name</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> {{ request.form.get('last_name') }}</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> Email</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> {{ request.form.get('email_address') }}</p>
+    </div>
+
+    <div class = "col-md-6">
+        <p> Year</p>
+    </div>
+    <p> {{ request.form.get('year') }}</p>
+
+    <div class = "col-md-6">
+        <p> Agree to be Contacted: </p>
+    </div>
+
+
+    <p><a href = "{{ url_for('contact') }}">Complete form again</a> </p>
+
+
+
+{% else %}
+<form class="row g-3" action = "{{ url_for('contact') }}" method = "POST">
+  <div class = "col-md-6">
+    <label for="email_address">Email address</label>
+    <input type="text" class="form-control" id="email_address" placeholder="testudo@umd.edu" name="email_address">
+  </div>
+
+  <div class = "col-md-6">
+    <label for="first_name">First Name</label>
+    <input type="text" class="form-control" id="first_name" placeholder="Testudo" name="first_name">
+  </div>
+
+  <div class = "col-md-6">
+    <label for="last_name">Last Name</label>
+    <input type="text" class="form-control" id="last_name" placeholder="Smith" name = "last_name">
+  </div>
+
+
+  <div class = "col-md-6">
+    <label for="year">Year</label>
+    <select class="form-control" id="year" name="year">
+      <option>Freshman</option>
+      <option>Sophomore</option>
+      <option>Junior</option>
+      <option>Senior</option>
+      <option>5th Year</option>
+    </select>
+
+
+  <div class = "col-md-6">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+  </div>
+</form>
+
+{% endif %}
+{% endblock %}
+</body>
+</html>

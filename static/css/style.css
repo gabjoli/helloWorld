@@ -1,0 +1,21 @@
+
+/*navigation bar at the top of page */
+nav {
+    background-color: darkgreen;
+    height: 60px;
+    color: white;
+    width: auto;
+    margin:auto;
+
+}
+
+/*font color and sizing the navigation bar*/
+p{
+    color:white;
+    text-align: center;
+    font-size: 15px;
+    width: 30%;
+    text-decoration: none;
+    font-weight:bold;
+
+}
