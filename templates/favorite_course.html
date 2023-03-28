@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Favorite Course</title>
+
+  <meta charset="UTF-8">
+  <title>Favorite Course</title>
 
 
 {% extends "base.html" %}
@@ -12,7 +12,7 @@
                  <p> Gabrielle Coleman's Module 08</p>
              </nav>
           </div>
-</head>
+
 <body>
     {{ "You entered your favorite course as: " + request.args.get('subject') + request.args.get('course_number')}} <br>
 {% endblock %}
